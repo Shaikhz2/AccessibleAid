@@ -5,8 +5,10 @@ class CreateEntries < ActiveRecord::Migration[6.0]
       t.string :last_name
       t.string :email
       t.string :phone
+      t.string :inquiry_details
+      t.string :inquiry_about
       t.date :date
-      t.string :inquiry_type
+      
 
       t.timestamps
     end

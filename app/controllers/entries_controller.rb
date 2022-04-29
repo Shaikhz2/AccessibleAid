@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
 
   # GET /entries or /entries.json
   def index
-    @entries = Entry.all
+    @entries = Entry.where(["inquiry_details LIKE ?","%#{params[:search]}%"])
   end
 
   # GET /entries/1 or /entries/1.json
@@ -65,6 +65,7 @@ class EntriesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def entry_params
-      params.require(:entry).permit(:first_name, :last_name, :email, :phone)
+      params.permit(:first_name, :last_name, :email, :phone, :inquiry_details, :inquiry_about)
     end
 end
+
