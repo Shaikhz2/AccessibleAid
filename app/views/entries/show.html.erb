@@ -1,0 +1,25 @@
+
+
+<div class="jumbotron">
+  <h1 class="display-4"> <%= @entry.first_name %> 
+  <%= @entry.last_name %>
+  </h1>
+  <p class="lead">
+  <%= @entry.email %>   |
+  <%= @entry.phone %>   |
+  <%= @entry.inquiry_details %>
+  
+  
+  </p>
+  <hr class="my-4">
+  
+  
+  
+  <%= link_to 'Edit', edit_entry_path(@entry), class:"btn btn-secondary" %> 
+  <%= link_to 'Back', entries_path, class:"btn btn-secondary" %>
+</div>
+
+
+
+
+
